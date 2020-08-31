@@ -1,0 +1,614 @@
+﻿BLUELIME  LEARNING   SOLUTIONS :
+Git is a free and open distributed Version Control System, designed to keep track of modifications in repository.
+It runs on the command line / terminal on local computer, and keeps a permanent record of previous modifications.
+Microsoft : TFS Team Foundation Server.
+
+
+Git hub 
+Web-based Git Repository Hosting Service, to upload GIT repositories
+It has GUI that enables to navigate each others repositories, and easy to collaborate with it.
+Provide Bug tracking Integration, and allows task management.
+Largest host of source code in the world,  allows Wiki for all projects.
+
+
+Installing   Git
+http://git-scm.com/download/win             → git bash
+http://www.github.com                          → git --version
+Git    Configuration
+System : Git config --system          
+User level : git config --global  user.name “ Anjali bhatt “ , it applies to individual level
+Git config --list
+Project : git config 
+
+
+Creating   Github   Account
+ http://www.github.com     
+Email address
+
+
+Initialising   Git    Repository
+cd desktop/foldername
+source virtualenvironment/scripts/activate                    → source/myenv/scripts/activate
+Clear 
+
+
+
+
+Excluding   files   from   Version   Control 
+Adding    files   to    Version    Control
+Committing    files     to     Version    Control
+Creating    remote     repository
+Pushing    project    code    to    Github
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Git is a Version Control System. 
+*  Easily recover file
+* Who introduced the issue and when?
+* Rollback to previously working state
+History of VCS :
+Problem: Too many zip files. 
+Solution  1: Local VCS is to be found, in which files are connected to a common Database in a local computer and file is       being tracked.
+Cons  1: If the hard disk of that individual is damaged, every file is automatically lost.
+
+
+Solution  2: Centralised VCS is introduced.
+Files are pulled into a central server, and once done, those files are pushed back to the server. It involves multiple users to access the server and no issue of an individual’s computer damage.
+Cons 2:  What if server is damaged, how to extract recent versions of files from the server?
+
+
+Solution 3: Distributed VCS
+Somewhat similar to VCS. Here every person has complete back up of all the changes in the main program, and the whole repositories are with everyone. The only change is saved, along with the history with all the clients while pull and push of different files.
+This is how GIT was formed …
+Linus  Torvalds: the father of LINUX.
+2002: He took help from Bit Keeper VCS, but in 2005 BitKeeper ended their free version.
+Linus Torvalds along with his team planned to make a free Distributed VCS.
+
+
+GIT :
+* It captures the Snapshot. You can extract the files from a folder within any duration, e.g a file made 3 years ago.
+* Almost every operation is local, i.e. you can perform any changes into your personal computer, and once done, then you can successfully pass those changes to the central server.
+* It has integrity. There is something called Checksum, which acts as an identification code of a particular file.
+* It generally only adds data. All the changes and files modified or updated, are saved in it.
+
+
+Git Bash -Terminal in MacOS and Linux, similar to Terminal as cmd and Windows PowerShell in Windows.
+Zoom : ( Ctrl + )  , Zoom Out : ( Ctrl - )
+Git Installation - Git Command Line Tool + Git Bash ( Terminal Program similar to one in Linux )
+Command :
+“ cd “  - Chnage Directory
+“ pwd ” - Present Working Directory         pwd > cd Desktop > cd /C
+GUI : Git website : tools and buttons for push, pull, request
+CMD Line : Use command line tools , write commands , and execute them respectively.
+Cmd line Tools is more worth using than GUI for GIT-hub.
+ Commit = snapshot = changes / modifications saved similar to the moments being saved in a picture. 
+
+
+git config --global user.name “Anjali”
+git config --global user.email “bhattanjali7@gmail.com”
+git config --list
+git config user.name                            --- Anjali
+git config user.email                        ---- bhattanjali7@gmail.com
+
+
+Working directory  --------------------------------    Staging directory     -----------------------------------  Git Directory ( Repositroy )
+Edit files   --------->>>>  stage files  ------>>>>  present them for snapshot  ------>>>>  commit   ------>>>>  .git files
+
+
+
+
+Activity 1:
+Add source files as .c and .txt to the desktop Git Tutorial Folder, and type a  command in Git Bash.
+Cmd: git status 
+o/p : message will be shown as : “ fatal : not a git repository (or any of the parent directories): .git   “
+It means there is no repository found associated with that particular folder.
+Cmd: git init 
+o/p : msg as  ‘ Initialised empty Git repository in ...folder location “
+You have just created a new repository of that folder, which consist of files as .c and .txt in it.
+Also a hidden folder is created as .git. Ignore for now.
+Cmd: git status
+o/p : “ on branch master   No commits yet ...untracked files: …….”
+It indicates that there is a branch master on, no files are committed yet and there are some untracked files present.
+
+
+First Task of Activity 1:
+Add all the files in the  staging area.
+Cmd: git add --a         or git add .        ……...add the modified files to the staging area (to be commited)
+o/p: Add all the files to the staging area.
+Cmd: git status
+o/p: msg as “ Changes to be committed. List of files in that folder  .c and .txt. ”
+Some files are being held at the Staging area, awaiting for being committed and then as a Snapshot.
+Files are tracked.
+Cmd:  git commit -m “ Initial Commit ” 
+o/p: msg as “ master….No. of files (2) changed, 1 insertion (+)  create mode file name ... ”
+Files are committed.
+Cmd: git status
+o/p: msg as “ On branch master.. Nothing to commit…. Working tree clean ” 
+Files are committed now. All changes are saved and snapshots are made.
+Cmd:  git log
+o/p: msg as “ commit ………( head -> master ) author : name, <email_id > Date,Time ”  
+You have successfully added the files to the commit part. 
+
+
+Second Task of Activity 1:
+Change the files already saved in that folder and save them.
+
+
+First change the .txt file and save the changes in it.
+Cmd:  git status
+o/p : msg as “ On branch master...Changes not staged to commit:  (use "git add <file>..." to update to be committed)... (use "git restore <file>..." to discard changes in working directory) …… 
+modified:   first.txt                  
+        no changes added to commit (use "git add" and/or "git commit -a")     “
+
+
+Change the .c file and save the changes.
+Cmd:  git status
+o/p :” On branch master….Changes not staged for commit:. (use "git add <file>..." to update what will be committed)....  (use "git restore <file>..." to discard changes in working directory)
+        modified:   14 Prime number.c
+        modified:   first.txt  
+                 no changes added to commit (use "git add" and/or "git commit -a")      “
+Third Task of Activity 1:
+
+
+Consider that you wanted to save the changes in .txt only and wanted to save it to commit and leave .c file for further more improvement.
+Cmd: git add first.txt                 ……...add the modified files to the staging area (to be commited)
+This file is to be commit , i.e. changes are to be saved.
+Cmd: git status
+o/p: “ $ git status….On branch master
+Changes to be committed:........  (use "git restore --staged <file>..." to unstage)
+        modified:   first.txt
+Changes not staged for commit:.....(use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   14 Prime number.c                         ”
+Changes which are saved to commit are shown for the particular file, and let out file in the staging area for further modification is reflected as not staged. It means 2nd changes in the .c file will not be saved to commit.
+Cmd:  git commit -m “Changed first.txt and added better notes.“
+Check whether files saved in commit -m commands are shown or not for first.txt file.
+Cmd:  git status
+o/p: msg as “ On branch master….nothing to commit, working tree clean “
+Cmd: git add --a   or git add .                 ……...add the modified files to the staging area (to be commited)
+This file is to be commit , i.e. changes are to be saved.
+Cmd: git status
+o/p : On branch master                Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)                modified:   14 Prime number.c
+
+
+Cmd: git log
+o/p : “ $ git log
+commit f0793d6ef0da29106e18fff5252fa5c84d4290d1 (HEAD -> master)
+Author: Anjali <bhattanjali7@gmail.com>
+Date:   Sat Aug 22 08:59:35 2020 +0530                .…..    This is modified .c file… Last commit
+commit d83858dd013d3a5c2336ab74c60b0cbc916bc16b
+Author: Anjali <bhattanjali7@gmail.com>
+Date:   Sat Aug 22 03:07:20 2020 +0530                …...    Changed first.txt and added further notes …. Second
+commit 01446aaa97286323d1fb4e013ef61b9d34ece186
+Author: Anjali <bhattanjali7@gmail.com>
+Date:   Sat Aug 22 01:43:20 2020 +0530                ….....     initial commit          …….. ”First
+
+
+Steps involved :
+1. git status
+2. git init - reinitialise         >>>> untracked files
+3. ls                         >>>> List all the files/ folders in this new repository
+4. git add--a                     >>>> unmodified files >>> changes will be staged
+5. git commit -m “This is modified .c file”                           >>>> committed as a Snapshot
+6. git  status                >>>> check the status
+7. git log                     >>>> list all the changes in the files/folders
+8. rm -rf .git                     >>>> if you wanted to deleted this repository
+Also,  if you want to delete your repository or you wanted to stop tracking your earlier files in your folder.
+Cmd:    rm -rf .git
+You are sending a command to remove the contents of that particular folder in the git ( all repositories related to it ).
+Cmd:    git status
+Fourth Task :
+ Use a already made repository and try to make its clone.
+Git Hub >> Website >> any repository >> Clone it by copying Code’s file as https://github.com/getupgit/Scratch.git
+Cmd:  git status
+o/p : message will be shown as : “ fatal : not a git repository (or any of the parent directories): .git   “
+Now, focus on making a clone of an already existing folder / repository in the .git.
+Cmd: git clone https://github.com/getupgit/Scratch.git
+o/p: A new folder with name as Scratch will be saved to your folder ….. “         Cloning into 'Scratch'...
+remote: Enumerating objects: 10, done.                        remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (10/10), 1.28 MiB | 433.00 KiB/s, done.                                “
+
+
+If you wanted to rename the filename as Scratch Game.
+Cmd: git clone https://github.com/getupgit/Scratch.git Scratch_Game
+o/p: new folder with name Scratch_Game  will be made.
+Cloning into 'Scratch_Game'...                remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (10/10), 1.28 MiB | 718.00 KiB/s, done.
+
+
+Cmd:  git clone https://github.com/getupgit/Scratch.git Scratch_Game
+o/p: Make sure the new file name does not include any space in it’s name.
+ Otherwise you will see an error as “ fatal: Too many arguments. ”
+Cloning into 'Scratch-Game'...                remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (10/10), 1.28 MiB | 485.00 KiB/s, done.
+
+
+Fifth Task :
+Try to make any changes inside a new folder and save that change.
+Change readme file in Scratch-Game folder by adding Hurray to it.
+Cmd: git status
+o/p: New files detected but still untracked. 
+ On branch master        ……        Untracked files:   ……   (use "git add <file>..." to include in what will be committed)
+        Scratch-Game/                   …….                     Scratch/                ……..                Scratch_Game/
+nothing added to commit but untracked files present (use "git add" to track)
+Cmd:  pwd ……. Check the current working directory in the git.
+Cmd:   ls …….  List all the contents in that particular folder in git.
+Cmd: cd file_name/ …… changed directory as cd Scratch-Game
+Cmd: git status
+o/p: files modified will be shown now….                          On branch master
+Your branch is up to date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Cmd:  git add --a    or git add .                  ……...add the modified files to the staging area (to be commited)
+Cmd: git status
+o/p: changes will be moved to the staging area.                        “On branch master
+Your branch is up to date with 'origin/master'.                        Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)                                modified:   README.md                “
+Cmd:   git commit -m “Changed readme Scratch-game, added HURRAY!!!”
+o/p: Command to make commit / snapshoht final.
+git commit -m "Changed readme Scratch-game, added HURRAYgit status!"
+[master c3ef649] Changed readme Scratch-game, added HURRAYgit status!
+1 file changed, 2 insertions(+), 1 deletion(-)
+Cmd: git status
+o/p: This Scratch game is committed , but is ahead of the Original Scratch repository. Now, a copy of this folder is on your local computer and can analyse it by using git log.
+On branch master                        ….                Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Cmd:   git log
+Cmd:   q 
+o/p: quit or exit the repository.
+
+
+Tutorial 6:File Status Lifecycle 
+Directory >> Folders >> combination of all files and folders is being tracked and  called as Repository.
+Repository has all these contents in it along with a hidden folder as ( .git ) folder which has all VC key information.
+( .git ) folder will let you access all those files being added (new), modified (previous) or removed in the repository of your working directory ( pwd ).
+When we Start tracking files         >>>         Empty Respository is created                 >>>          We get untracked files.
+
+
+File Status Lifecycle :          Start --- Untrack---- Modify ----- Commit ---- end
+        [1]
+Untracked       - > add the file ->     unmodified      -> edit the file ->     modified       ->  add the file  ->        staged  
+      [2]
+Staged        - > commit  the file ->     unmodified  ( snapshot taken )  
+Consider you have F1, F2 and F3 files/ folders in the repository.
+Steps 1:  git status         >>> check whether any repository is already present or not.
+
+
+Steps 2:  git  init                 >>> Make the current folder as an Empty repository >>>
+                        All the files/folders in that repository will be considered as Untracked intially.
+
+
+  Steps 3: git add  --a          >>> Tracking started ,all the files/folders added to the staging area, are now  unmodified files.
+                           All the files/folders are not modified, but are staged ( unmodified ).
+                                                
+  Steps 4: change files         >>> If folder F1, F2 are modified and saved, then F1 & F2 are staged & modified now.
+                          F3 is also staged , but unmodified till now.
+                                You need to add --a these changes in the committed area otherwise it won’t save.
+  Steps 5: git add  --a filename                 >>>         git add --a F1 , git add --a F2
+                                Now, these changes are saved in the staging area, and ready to be commit / Snapshot.
+
+
+  Steps 6: git commit -m  “ name of the changes / committed ”          >>> committed
+                          [ On branch master                    nothing to commit, working tree clean ]
+
+
+Tutorial 7 : Ignoring files in Git - gitignore By default, git ignore any blank folder
+
+
+Generating new file in linux ->     touch filename.log    touch minute.log
+It will generate a new blank  file in linux,in the same folder with its specific filename. It will be shown in thegit status also.
+Target - to ignore these blank file generated, if not in use.
+Solution -
+Step 1 : Create a new file as ->  touch  .gitignore
+Make sure there is a blank space between touch and .gitignore.
+Step 2 : add the file name of undesired file ( here minute.log ) inside the  .gitignore file in the folder and save it.
+Step 3 :  run the command git status  
+You will note undesired file  i.e, minute.log is disappeared from the staging area and only .gitignore is left
+Step 4 : run the cmd :  git add --a  
+Step 5 : run   git status
+ You will notice .gitignore is added to the staging area and ready to commit
+Step 6 : run  git commit -m “ added gitignore file with name minute.log inside it”
+Now, if you will modify undesired file and save it, there won’t be any additional changes for git status.
+Those changes will no longer be reflected in git  status as minute.log has been ignored.
+Similarly, all such .log error or undesired files can be ignored at once,by saving  *.log inside .gitignore file. 
+For ignoring any folders as ‘anju’ with some files in it, inside your working folder, follow below steps--
+Add anju/ inside the .gitignore file in the working folder. It will untrack the folder anju/
+However if a new folder “ folder2 ” contains “ anju ” and 1 new file “ new file”, then git status will still ignore  “ anju ” but will show the newly added file “ folder 2 ” . All the folder with the name “ anju/ “ will be ignored.
+To untrack “anju ” folder from inside folder, add  “ /anju/  ”. It will stage the untrack anju inside folder2.
+Add     folder2/folder1    or     /folder/       or           folder1/      
+Cmd : echo “filename” >> .gitignore
+Cmd : gitstatus
+It will remove the specified file from the git status
+
+
+Tutorial 8: git diff
+It compares the working directory and the staging area.
+Staging area : previous files stored and saved
+Working directory : files being modified at present
+If git diff is used after git add. Or git add --a , then it won’t show any difference as now working directory and staging area aand all the modified files are saved now.
+To compare, staging area Vs latest commit , use command :  git diff --staged
+
+
+Tutorial 9-10: git remove , rename , direct commit
+git  commit  -a  -m  “ Direct commit done, skipping untracked files”
+Above command will commit directly, but untracked files will be skipped.
+git  add filename
+git  log             → q to exit
+git  log  -p
+It will show the details of the commits benign done.
+git  rm  third.txt
+It will remove that particular file, even from the staging area, ie deleted directly
+git  mv first.txt lectures.txt
+It will rename the first.txt  directly to lectures.txt, and will save it, and will directly stage it.
+If you have added some file to .gitignore and changed that file later. You will notice that changed will be showmn in staging area, even after adding that file to .gitignore.
+So first you need to remove that file from the tracking list, and make it untracked.
+git  rm  --cached  newghar.txt    . though msg will be shown as deleted, but it will be in the folder but as untracked. Now, even if you will change it, it will be ignored as it is in .gitignore and untracked file.
+If removed from gitignore, then it will be listed as untracked.
+
+
+yTutorial 11 : clone , viewing ,changing commit
+Rm -rf .git
+Git clone https://github.com/getupgit/C_journey.git
+Git log -p
+Git log -p -3                                 // only 3 modifications
+Git log --stat                                // all modifications in short view
+Git log --pretty=oneline                        //  all changes in 1 line
+Git log --pretty=short             
+Git log --pretty=full                          // author = original writer, commit = one who modified the content        
+q                                                   // exit
+Git log --since=2.days                          // weeks , .months, .years
+Git log --pretty=format:”%h -- %an”                        // an = author name, %h- hash commit short
+Git log --pretty=format:”%h -- %ae”                          // ae = author email
+Git log -p -1                                                // will show last modification being done
+Git commit --amend                                         // will amend last modification, let you save that
+
+
+Tutorial 12 :      unstage a file
+To unstage a file ,            Git restore --staged filename.txt                                   // MAtching a file with previous modifications,
+Git checkout -- new.txt
+Git checkout -f                                    // match previous dir to working dir
+
+
+Tutorial 13 :   push the ( local ) content to ( remote ) github
+Cmd :          git remote add origin https://github.com/getupgit/gitnewtutorial.git 
+check by Git remote, it will  replace the name of website by name origin
+                 git remote add mango https://github.com/getupgit/gitnewtutorial.git, 
+Check by Git remote  it will replace the name of website by name mango.
+Cmd :        git remote rm mango
+Check by git remote, it will remove the another remote named “ mango”
+Cmd :           git push -u origin master                    // no permission as no ssh keys for security
+Get new ssh keys for committing and amending            
+ Cmd :        ssh-keygen -t rsa -b 4096 -C "bhattanjali7@gmail.com"
+// just press enter after every cmd now on.
+  
+
+
+
+Cmd :         eval $(ssh-agent -s)
+Agent pid 1500
+Cmd :                ssh-add ~/.ssh/id_rsa
+Cmd :                tail ~/.ssh/id_rsa.pub                   Or   cat  ~/.ssh/id_rsa.pub
+Cmd :           git push -u origin master  
+
+
+Tutorial 14 :   git alias short command 
+Cmd:  git config --global alias.st status
+It will read my git st as command git status
+Cmd:  git config  --global alias.ci commit
+It will read my command git commit same as git ci
+Cmd:  git config --global alias.unstage “restore --staged --”
+It will replace  unstage as command  git restore --staged -- filename
+Cmd:   git config --global alias.last ‘log -p -1’
+It will show me the command lat as git log -p -1
+
+
+Tutorial 15 :   git  branch
+
+
+CMD : git restore filename
+Will discard all the changes related to that files
+Cmd:         git    checkout   -b   develop
+New branch created develop
+ Modify your files, save changes , commit as git commit -a -m “files saved done”
+It will run on parallel
+Cmd:         git   checkout      master
+It will switch the branch to the original master 
+Check the local folder in your computer.
+Cmd:         git checkout develop
+You will return to the branch folder
+Cmd:         git branch
+It will display all the branch associated
+  
+
+Green text is the working branch.
+
+
+Tutorial 16: merge branch and master
+Cmd:   rm    -rf   .git
+Delete the existing gepository
+Cmd :      install vs studio and open a new folde as my_webiste 
+Right click and open with code
+Go to Terminal   → and you can use it as git commands also
+Open a new file as           index.html, and check your folder, it will have a new file as index.html
+Make modifications in the master file, and save them.
+Cmd: git checkout -b trycleanup
+Make changes to the branch in parallel, and save them.
+Cmd: git checkout master
+It will let you see the master files, now try to merge these changes if you are ok with it.
+Cmd:       git merge branchname
+The message will display as merge conflicts : it shows that for a single statement, there are 2 different changes in master as well as in the branch, and it will ask to accept  one change.
+So first accept one of these changes as the final changes and then continue the merging process.
+Cmd:           git status
+It will show you the unmerged path message.
+Cmd:          git add .     , git commit  → escape -- press  :wq
+Save these files and commit them .
+
+
+Tutorial 17: merge conflict
+Master branch C0         ←         commit C1         ←         new commit C2                 ←    Commit C6
+                                                                                ↑                                        
+                                                                                ↑
+                                          Issue -b : Commit in branch C4   ←   Commit C5         ←   Commit C7
+
+
+Git will always show conflict if there are some changes in the same part.
+Cmd: Resolve :  git add . the  change and then git commit
+
+
+
+
+  
+
+
+
+
+
+Branch management:
+Cmd:          Git branch 
+*master                  develop                 trycleanup
+The one with green color  and pointer is the working branch.
+Cmd:           git branch  -v
+Cmd:  git branch --merged                          // all branch , with the merged branches
+Cmd:  git branch --no-merged                        // unmerged branches
+Cmd:  git branch -d branchname                         // gives error, if this branch is not merged, for safety of data,
+                                                                But will surely delete the already merged file.
+Cmd:   git branch -D branchname                // git gets confirmation for deletion, and will delete the branch
+Always try to commit all the changes in the  branch section before switching or merging it with the master file.
+
+
+Tutorial 18 : Branching Workflow
+1.  Long Running Branches                 b. Topic Branches
+Examples  of  long  running  branches :   master ,         develop ,        proposedupdate
+Temporary branaches : topic branches - transitory
+
+
+Tutorial 19: Pushing repository into the server ( github.com )                                
+First edit the branches, always commit and save the changes
+Second, move to the master branch.
+Cmd:   git remote add origin https://github.com/BhattAnjali/gitnewtutorial.git
+Check by git remote, if the gitbash is connected to a remote server already or not.
+Cmd:   git remote  -v
+If no ssh key issue arises, you can proceed with the pushing into the branch
+Cmd:   git push -u origin master
