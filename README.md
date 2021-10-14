@@ -1,4 +1,4 @@
-# GIT tutorial
+# GIT
 # More than just Push - Pull...
 
 
